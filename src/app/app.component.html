@@ -1,5 +1,13 @@
 <router-outlet>
-  <div class="main">
-    <h3 class="blink_text">Hosted by nath</h3>
-  </div>
+  <header class="header">
+    <a href="" class="logo">Heroku API</a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+      <li><a routerLink="getapi">Get api</a></li>
+      <li><a routerLink="postapi">post api</a></li>
+      <li><a routerLink="">home</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </header>
 </router-outlet>
