@@ -7,7 +7,6 @@
     "build": "ng build",
     "test": "ng test",
     "deploy": "git push origin master && git push heroku master",
-    // "postinstall": "ng build --aot -prod",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
