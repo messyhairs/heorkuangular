@@ -7,17 +7,6 @@ const path = require('path');
 // Run the app by serving the static files
 // in the dist directory
 app.use(cors());
-// const forceSSL = function () {
-//     return function (req, res, next) {
-//         if (req.headers['x-forwarded-proto'] !== 'https') {
-//             return res.redirect(
-//                 ['https://', req.get('Host'), req.url].join('')
-//             );
-//         }
-//         next();
-//     }
-// }
-// app.use(forceSSL());
 
 app.use(express.static(__dirname + '/dist/angulardemo'));
 // Start the app by listening on the default
@@ -32,4 +21,4 @@ app.get('/getdatas', function (req, res) {
         res.send(student);
     });
 });
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 8080);
