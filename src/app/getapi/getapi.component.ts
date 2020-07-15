@@ -13,7 +13,6 @@ export class GetapiComponent implements OnInit {
     this.apis.getdatas().subscribe(datas => {
       console.log(datas);
     });
-    console.log('helo');
   }
 
 }
