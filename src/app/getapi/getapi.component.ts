@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ApiService } from '../service/api.service';
 @Component({
   selector: 'app-getapi',
   templateUrl: './getapi.component.html',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetapiComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apis: ApiService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.apis.getdatas().subscribe(datas => {
+      console.log(datas);
+    });
+    console.log('helo');
   }
 
 }
