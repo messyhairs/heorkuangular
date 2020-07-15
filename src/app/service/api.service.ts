@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 export class ApiService {
 
   constructor(private http: HttpClient) { }
-  api = 'https://fringuante-chaise-26476.herokuapp.com';
-  // api = 'https://localhost:8080';
+  // api = 'https://fringuante-chaise-26476.herokuapp.com';
+  api = 'https://localhost:3000';
 
   getdatas() {
     return this.http.get(this.api + '/' + 'getdatas');
