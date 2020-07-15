@@ -6,12 +6,14 @@ import { ApiService } from '../service/api.service';
   styleUrls: ['./getapi.component.css']
 })
 export class GetapiComponent implements OnInit {
+  moves: any;
 
   constructor(private apis: ApiService) { }
 
   ngOnInit() {
     this.apis.getdatas().subscribe(datas => {
       console.log(datas);
+      this.moves = datas;
     });
   }
 
