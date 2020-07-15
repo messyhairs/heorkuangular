@@ -7,7 +7,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
   api = 'https://fringuante-chaise-26476.herokuapp.com';
-  // api = 'https://localhost:3000';
+  // api = 'https://localhost:8080';
 
   getdatas() {
     return this.http.get(this.api + '/' + 'getdatas');
