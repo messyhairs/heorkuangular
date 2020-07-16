@@ -18,10 +18,16 @@ mongoose.connect(config.DB, { useNewUrlParser: true }).then(
     () => { console.log('Database is connected') },
     err => { console.log('Can not connect to the database' + err) }
 );
+
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/dist/angulardemo'));
 
-const port = process.env.PORT || 4000;
+// const port = process.env.PORT || 4000;
+const port = 3000;
+if (app.get("env") === "production") {
+    app.use(enforce.HTTPS({ trustProtoHeader: true }));
+}
+
 
 const server = app.listen(port, function () {
     console.log('Listening on port ' + port);

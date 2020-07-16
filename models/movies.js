@@ -16,7 +16,7 @@ let Movies = new Schema({
         type: String
     }
 }, {
-    collection: 'moviealbum'
+    collection: 'Movies'
 });
 
 module.exports = mongoose.model('Movies', Movies);
