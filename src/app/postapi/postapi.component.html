@@ -1,1 +1,42 @@
-<p>postapi works!</p>
+<div class="container mt-5">
+    <form name="form" [formGroup]="movieform" (ngSubmit)="movieform.valid && postnow()">
+        <div class="form-group">
+            <label for="Title">Title</label>
+            <input type="text" class="form-control" formControlName="Title"
+                [ngClass]="{'is-invalid':movieform.get('Title').touched && movieform.get('Title').invalid}" required />
+            <div class="invalid-feedback">
+                <div>Title is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Type">Type</label>
+            <input type="text" class="form-control" formControlName="Type"
+                [ngClass]="{'is-invalid':movieform.get('Type').touched && movieform.get('Type').invalid}" required />
+            <div class="invalid-feedback">
+                <div>Type is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Year">Year</label>
+            <input type="text" class="form-control" formControlName="Year"
+                [ngClass]="{'is-invalid':movieform.get('Year').touched && movieform.get('Year').invalid}" />
+            <div *ngIf="movieform.get('Year').touched && movieform.get('Year').invalid" class="invalid-feedback">
+                <div *ngIf="movieform.get('Year').errors.required">Year Name is required</div>
+                <!-- <div *ngIf="form.get('Year').errors.Year">Year must be a valid Year Address</div> -->
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Poster">posturl</label>
+            <input type="Poster" class="form-control" formControlName="Poster"
+                [ngClass]="{'is-invalid':movieform.get('Poster').touched && movieform.get('Poster').invalid}" />
+            <div *ngIf="movieform.get('Poster').touched && movieform.get('Poster').invalid" class="invalid-feedback">
+                <div *ngIf="movieform.get('Poster').errors.required">Poster is required</div>
+                <!-- <div *ngIf="form.get('Poster').errors.minlength">Poster must be a letaset 6 charector</div> -->
+            </div>
+
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" [disabled]="!movieform.valid">Post</button>
+        </div>
+    </form>
+</div>
