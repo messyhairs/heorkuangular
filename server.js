@@ -28,8 +28,7 @@ if (app.get("env") === "production") {
     app.use(enforce.HTTPS({ trustProtoHeader: true }));
 }
 
-
-const server = app.listen(port, function () {
+app.listen(port, function () {
     console.log('Listening on port ' + port);
 });
 // });
