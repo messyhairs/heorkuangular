@@ -22,15 +22,13 @@ mongoose.connect(config.DB, { useNewUrlParser: true }).then(
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/dist/angulardemo'));
 
-// const port = process.env.PORT || 4000;
-const port = 3000;
-if (app.get("env") === "production") {
-    app.use(enforce.HTTPS({ trustProtoHeader: true }));
-}
+// if (app.get("env") === "production") {
+//     app.use(enforce.HTTPS({ trustProtoHeader: true }));
+// }
 
-app.listen(port, function () {
-    console.log('Listening on port ' + port);
-});
+// app.listen(port, function () {
+//     console.log('Listening on port ' + port);
+// });
 // });
 
 // Start the app by listening on the default
@@ -45,4 +43,4 @@ app.listen(port, function () {
 //         res.send(student);
 //     });
 // });
-// app.listen(process.env.PORT || 8080)
+app.listen(process.env.PORT || 8080)
